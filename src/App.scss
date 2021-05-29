@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(154, 172, 224);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.wrapper{
+    width: calc(100vw - 100px);
+    max-width: 1200px;
+    height:100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.content-wrapper {
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+  
+.container{
+    box-shadow: 2px 2px 2px 2px gray;
+    max-width: 1200px;
+    background-color:#fff;
+    border-radius: 20px;
+}
+
+.header{
+  &__text{
+    padding: 5px;
+    text-align: center;
+    color:black;
+  }
+
+  &__wrapper{
+    border: 0px solid royalblue;
+    background-color:royalblue;
+
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.button{
+  font-size:20px;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  color:rgb(255, 255, 255);
+  border:none;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  &__blue{
+    background-color:royalblue;
+
+    &:hover{
+      background-color:rgb(29, 46, 99);
+    }
+  }
+
+  &__red{
+    background-color:rgb(235, 2, 2);
+
+    &:hover{
+      background-color:rgb(116, 16, 16);
+    }
+  }
+}
+.editor{  
+  &__wrapper{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__text-area{
+    background-color:rgb(247, 247, 247)
+  }
+}
+
+.form-control{ 
+   margin-right: 75%;
+   outline: none;
+   border: 1px solid black;
+   font-size: 20px;
+   margin-top: 5px;
+}
+
+.post-item{
+  &__wrapper{
+    background-color:rgb(223, 223, 223);
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 10px 10px 0;
+    display:flex;
+    justify-content: space-between;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  &__title{
+    margin-top: auto;
+    margin-bottom:auto;
+    margin-left: 20px;
+  }
+
+  &__link{
+    text-decoration: none;
+    outline: none;
+    color:inherit;
+  }
+}
+
+.post{
+  &__author{
+    font-size:20px;
+    font-weight:700;
+  }
+
+  &__data{
+    color:rgb(59, 59, 59);
+    font-weight:700;
+  }
+  
+  &__separator{
+    border-top: 3px solid #bbb;
+    margin-right: 10px;
+  }
+}

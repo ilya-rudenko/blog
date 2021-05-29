@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
-function App() {
+import "./App.scss";
+
+import Home from "./pages/Home";
+import PostPage from "./pages/PostPage";
+import AddPost from "./pages/AddPost";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="wrapper">
+        <div className="container">
+          <BrowserRouter>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/add-post" component={AddPost} />
+            <Route exact path="/post/:postId" component={PostPage} />
+          </BrowserRouter>
+        </div>
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
