@@ -9,3 +9,4 @@
   - SCSS
   - React Router
   - Draft JS
+## [Demo page](https://ilya-rudenko.github.io/blog/#/)
