@@ -93,6 +93,8 @@ input::-webkit-calendar-picker-indicator {
 
 .form-control{ 
    margin-right: 75%;
+   width: 20vw;
+   max-width:250px;
    outline: none;
    border: 1px solid black;
    font-size: 20px;

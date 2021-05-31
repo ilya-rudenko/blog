@@ -1,10 +1,12 @@
 import React, { Fragment, useState } from "react";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { Editor } from "@nick4fake/react-draft-wysiwyg";
+import "@nick4fake/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
 import { convertToRaw, EditorState } from "draft-js";
 import uuid from "react-uuid";
 import { useHistory } from "react-router-dom";
+
+// @nick4fake/react-draft-wysiwyg
 
 // components
 import Button from "../components/Button";
@@ -114,7 +116,7 @@ const AddPost = () => {
           type="red"
           onClick={() => {
             setEditorState(EditorState.createEmpty());
-            console.log("Redirected");
+            // console.log("Redirected");
           }}
           to="/"
           style={{ marginLeft: "10px" }}

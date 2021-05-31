@@ -8,6 +8,7 @@ import Header from "../components/Header";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 import { deletePost } from "../redux/actions/postsActions";
+import { deleteTitle } from "../redux/actions/titlesActions";
 
 const PostPage = ({ match }) => {
   const postId = match.params.postId;
@@ -25,6 +26,7 @@ const PostPage = ({ match }) => {
   const onDeletePost = () => {
     if (window.confirm("Вы уверены что хотите удалить пост?")) {
       dispatch(deletePost(postId));
+      dispatch(deleteTitle(post.title));
       history.push("/");
     }
   };
