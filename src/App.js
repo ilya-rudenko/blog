@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
@@ -14,11 +14,11 @@ const App = () => {
     <Provider store={store}>
       <div className="wrapper">
         <div className="container">
-          <BrowserRouter>
+          <HashRouter basename={process.env.PUBLIC_URL}>
             <Route exact path="/" component={Home} />
             <Route exact path="/add-post" component={AddPost} />
             <Route exact path="/post/:postId" component={PostPage} />
-          </BrowserRouter>
+          </HashRouter>
         </div>
       </div>
     </Provider>

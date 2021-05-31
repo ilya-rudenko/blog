@@ -10,9 +10,10 @@ import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import Header from "../components/Header";
 // redux
-import { addPost } from "../redux/actions/postsActions";
 import { useSelector, useDispatch } from "react-redux";
+import { addPost } from "../redux/actions/postsActions";
 import { addAuthor } from "../redux/actions/authorsActions";
+import { addTitle } from "../redux/actions/titlesActions";
 
 const AddPost = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -23,6 +24,7 @@ const AddPost = () => {
   const dispatch = useDispatch();
 
   const authors = useSelector((state) => state.authors);
+  const titles = useSelector((state) => state.titles);
 
   const onEditorStateChange = (newEditorState) => {
     setEditorState(newEditorState);
@@ -35,30 +37,38 @@ const AddPost = () => {
   };
 
   const onSubmit = () => {
-    setAuthorName(authorName.trim());
-    setTitle(title.trim());
+    const formattedTitle = title.trim();
+    const formattedAuthorName = authorName.trim();
 
-    if (authorName === "") {
+    if (formattedAuthorName === "") {
       alert("Имя автора не должно быть пустым");
       return;
     }
-    if (title === "") {
+    if (formattedTitle === "") {
       alert("Заголовок не должен быть пустым");
       return;
     }
+    if (titles.includes(formattedTitle)) {
+      alert("Заголовок должен быть уникальным");
+      return;
+    }
+
+    // console.log({ formattedTitle, formattedAuthorName });
 
     dispatch(
       addPost({
         id: uuid(),
         body: draftToHtml(convertToRaw(editorState.getCurrentContent())),
         title,
-        authorName: authorName.trim(),
+        authorName: formattedAuthorName,
         date: Date.now(),
       })
     );
 
-    if (!authors.includes(authorName)) {
-      dispatch(addAuthor(authorName));
+    dispatch(addTitle(formattedTitle));
+
+    if (!authors.includes(formattedAuthorName)) {
+      dispatch(addAuthor(formattedAuthorName));
     }
 
     history.push("/");
