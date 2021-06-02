@@ -1,6 +1,4 @@
 import React, { Fragment } from "react";
-
-import Button from "../components/Button";
 import Header from "../components/Header";
 import PostItem from "../components/PostItem";
 
@@ -12,18 +10,21 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Header title="Главная" />
+      <Header title="Главная" addPost />
       <div className="content-wrapper">
-        {posts.map((post) => (
-          <PostItem
-            title={post.title}
-            id={post.id}
-            authorName={post.authorName}
-            date={post.date}
-            key={post.id}
-          />
-        ))}
-        <Button text="Добавить запись" type="blue" to="/add-post" />
+        {posts.length === 0 ? (
+          <div className="placeholder">Здесь пока нет записей...</div>
+        ) : (
+          posts.map((post) => (
+            <PostItem
+              title={post.title}
+              id={post.id}
+              authorName={post.authorName}
+              date={post.date}
+              key={post.id}
+            />
+          ))
+        )}
       </div>
     </Fragment>
   );

@@ -111,16 +111,6 @@ const AddPost = () => {
           editorClassName="editor__text-area"
         />
         <Button text="Добавить запись" type="blue" onClick={onSubmit} />
-        <Button
-          text="Отмена"
-          type="red"
-          onClick={() => {
-            setEditorState(EditorState.createEmpty());
-            // console.log("Redirected");
-          }}
-          to="/"
-          style={{ marginLeft: "10px" }}
-        />
       </div>
     </Fragment>
   );

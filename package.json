@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://ilya-rudenko.github.io/blog/",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "@nick4fake/react-draft-wysiwyg": "^1.15.1",
     "@testing-library/jest-dom": "^5.11.4",

@@ -46,13 +46,7 @@ const PostPage = ({ match }) => {
           dangerouslySetInnerHTML={createContentMarkup()}
         />
         <hr className="post__separator" />
-        <Button text="Вернуться на главную" type="blue" to="/" />
-        <Button
-          text="Удалить запись"
-          type="red"
-          style={{ marginLeft: "10px" }}
-          onClick={onDeletePost}
-        />
+        <Button text="Удалить запись" type="red" onClick={onDeletePost} />
       </div>
     </Fragment>
   ) : (
