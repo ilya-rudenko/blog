@@ -1,0 +1,19 @@
+
+.post{
+    &__author{
+      font-size:20px;
+      font-weight:700;
+    }
+  
+    &__data{
+      color:rgb(59, 59, 59);
+      font-weight:700;
+    }
+    
+    &__separator{
+      border-top: 3px solid #bbb;
+      margin-right: 10px;
+    }
+  }
+  
+  

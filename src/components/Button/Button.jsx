@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+import "./Button.scss";
+
 const Button = ({ onClick, text, type, style, to }) => {
   return to ? (
     <Link to={to}>

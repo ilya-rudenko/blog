@@ -3,6 +3,8 @@ import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import "./PostItem.scss";
+
 const PostItem = ({ id, title, date, authorName }) => {
   return (
     <Link to={`/post/${id}`} className="post-item__link">

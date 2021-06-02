@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
-import Header from "../components/Header";
-import PostItem from "../components/PostItem";
+import Header from "../../components/Header/Header";
+import PostItem from "../../components/PostItem/PostItem";
+
+import "./Home.scss";
 
 //redux
 import { useSelector } from "react-redux";

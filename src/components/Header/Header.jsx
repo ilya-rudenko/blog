@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Home as HomeIcon, Create as CreateIcon } from "@material-ui/icons";
 
+import "./Header.scss";
+
 const Header = ({ title, addPost }) => {
   return (
     <div className="header__wrapper">

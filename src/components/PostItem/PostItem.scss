@@ -1,0 +1,29 @@
+.post-item{
+    &__wrapper{
+      background-color:rgb(223, 223, 223);
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 0 10px 10px 0;
+      display:flex;
+      justify-content: space-between;
+    }
+  
+    &__info{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    &__title{
+      margin-top: auto;
+      margin-bottom:auto;
+      margin-left: 20px;
+    }
+  
+    &__link{
+      text-decoration: none;
+      outline: none;
+      color:inherit;
+    }
+  }

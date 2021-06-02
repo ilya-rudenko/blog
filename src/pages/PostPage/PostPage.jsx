@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import dayjs from "dayjs";
 
-import Button from "../components/Button";
-import Header from "../components/Header";
+import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
 //redux
 import { useSelector, useDispatch } from "react-redux";
-import { deletePost } from "../redux/actions/postsActions";
-import { deleteTitle } from "../redux/actions/titlesActions";
+import { deletePost } from "../../redux/actions/postsActions";
+import { deleteTitle } from "../../redux/actions/titlesActions";
+
+//SCSS
+import "./PostPage.scss";
 
 const PostPage = ({ match }) => {
   const postId = match.params.postId;
@@ -24,7 +27,7 @@ const PostPage = ({ match }) => {
   };
 
   const onDeletePost = () => {
-    if (window.confirm("Вы уверены что хотите удалить пост?")) {
+    if (window.confirm("Вы уверены что хотите удалить запись?")) {
       dispatch(deletePost(postId));
       dispatch(deleteTitle(post.title));
       history.push("/");
@@ -38,7 +41,7 @@ const PostPage = ({ match }) => {
         <div className="post__author">{post.authorName}</div>
 
         <div className="post__data">
-          {dayjs(post.date).format("HH:mm, MMMM YYYY")}
+          {dayjs(post.date).format("HH:mm, D MMMM YYYY")}
         </div>
         <hr className="post__separator" />
         <div
@@ -51,7 +54,7 @@ const PostPage = ({ match }) => {
     </Fragment>
   ) : (
     <Fragment>
-      <Header title="Такого поста нет" />
+      <Header title="Такой записи нет" />
       <div className="content-wrapper">
         <Button text="Вернуться на главную страницу" type="blue" to="/" />
       </div>

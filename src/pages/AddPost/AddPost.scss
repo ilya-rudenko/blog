@@ -1,0 +1,27 @@
+input{ 
+
+    outline: none;
+    border: 1px solid black;
+    font-size: 20px;
+    display:table-cell;
+    margin-left: 20px;
+    margin-top: 5px;
+ }
+.form-text{
+  display:table-cell;
+}
+
+form{
+  display:table-row;
+}
+
+ .editor{  
+    &__wrapper{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    &__text-area{
+      background-color:rgb(247, 247, 247)
+    }
+  }

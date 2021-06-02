@@ -6,16 +6,17 @@ import { convertToRaw, EditorState } from "draft-js";
 import uuid from "react-uuid";
 import { useHistory } from "react-router-dom";
 
-// @nick4fake/react-draft-wysiwyg
+// scss
+import "./AddPost.scss";
 
 // components
-import Button from "../components/Button";
-import Header from "../components/Header";
+import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { addPost } from "../redux/actions/postsActions";
-import { addAuthor } from "../redux/actions/authorsActions";
-import { addTitle } from "../redux/actions/titlesActions";
+import { addPost } from "../../redux/actions/postsActions";
+import { addAuthor } from "../../redux/actions/authorsActions";
+import { addTitle } from "../../redux/actions/titlesActions";
 
 const AddPost = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -81,9 +82,8 @@ const AddPost = () => {
       <Header title="Добавить запись" />
       <div className="content-wrapper">
         <form>
-          Автор:{" "}
+          <div className="form-text">Автор:</div>
           <input
-            className="form-control"
             value={authorName}
             onChange={onAuthorNameChange}
             list="authorsList"
@@ -96,12 +96,8 @@ const AddPost = () => {
         </form>
 
         <form>
-          Заголовок:{" "}
-          <input
-            className="form-control"
-            value={title}
-            onChange={onTitleChange}
-          />
+          <div className="form-text">Заголовок:</div>
+          <input value={title} onChange={onTitleChange} />
         </form>
 
         <Editor

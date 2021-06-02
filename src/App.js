@@ -5,9 +5,9 @@ import store from "./redux/store";
 
 import "./App.scss";
 
-import Home from "./pages/Home";
-import PostPage from "./pages/PostPage";
-import AddPost from "./pages/AddPost";
+import Home from "./pages/Home/Home";
+import PostPage from "./pages/PostPage/PostPage";
+import AddPost from "./pages/AddPost/AddPost";
 
 const App = () => {
   return (
