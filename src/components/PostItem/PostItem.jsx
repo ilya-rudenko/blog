@@ -13,7 +13,7 @@ const PostItem = ({ id, title, date, authorName }) => {
         <div className="post-item__info">
           <span className="post-item__author">Автор: {authorName}</span>
           <span className="post-item__date">
-            {dayjs(date).format("HH:mm, MMMM YYYY")}
+            {dayjs(date).format("HH:mm, D MMMM YYYY")}
           </span>
         </div>
       </div>
